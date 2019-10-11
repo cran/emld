@@ -7,12 +7,13 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="author" content="Carl Boettiger" />
 
-<meta name="date" content="2019-03-04" />
+<meta name="date" content="2019-10-11" />
 
 <title>emld Tutorial</title>
 
@@ -96,7 +97,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -291,6 +292,9 @@ code > span.al { color: #ff0000; font-weight: bold; }
 code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
 </style>
 
+
+
+
 </head>
 
 <body>
@@ -299,8 +303,8 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 
 <h1 class="title toc-ignore">emld Tutorial</h1>
-<h4 class="author"><em>Carl Boettiger</em></h4>
-<h4 class="date"><em>2019-03-04</em></h4>
+<h4 class="author">Carl Boettiger</h4>
+<h4 class="date">2019-10-11</h4>
 
 
 
@@ -410,13 +414,15 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb7-26" data-line-number="26">rdf &lt;-<span class="st"> </span><span class="kw">rdf_parse</span>(hf205.json, <span class="st">&quot;jsonld&quot;</span>)</a>
 <a class="sourceLine" id="cb7-27" data-line-number="27">df &lt;-<span class="st"> </span><span class="kw">rdf_query</span>(rdf, sparql)</a>
 <a class="sourceLine" id="cb7-28" data-line-number="28">df</a>
-<a class="sourceLine" id="cb7-29" data-line-number="29"><span class="co">#&gt; # A tibble: 1 x 6</span></a>
-<a class="sourceLine" id="cb7-30" data-line-number="30"><span class="co">#&gt;   genus      species  northLat southLat eastLong westLong</span></a>
-<a class="sourceLine" id="cb7-31" data-line-number="31"><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb7-32" data-line-number="32"><span class="co">#&gt; 1 Sarracenia purpurea     42.6     42.4    -72.1    -72.3</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-29" data-line-number="29"><span class="co">#&gt; # A tibble: 0 x 6</span></a>
+<a class="sourceLine" id="cb7-30" data-line-number="30"><span class="co">#&gt; # … with 6 variables: genus &lt;chr&gt;, species &lt;chr&gt;, northLat &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-31" data-line-number="31"><span class="co">#&gt; #   southLat &lt;chr&gt;, eastLong &lt;chr&gt;, westLong &lt;chr&gt;</span></a></code></pre></div>
 </div>
 </div>
 
+
+
+<!-- code folding -->
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

@@ -1,6 +1,6 @@
 Package: emld
 Title: Ecological Metadata as Linked Data
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: person("Carl", "Boettiger", 
                   email = "cboettig@gmail.com", 
                   role = c("aut", "cre", "cph"),
@@ -31,9 +31,9 @@ Imports: xml2, jsonlite, jsonld, methods, yaml
 VignetteBuilder: knitr
 Language: en-US
 NeedsCompilation: no
-Packaged: 2019-03-04 19:20:01 UTC; cboettig
+Packaged: 2019-10-11 05:00:19 UTC; cboettig
 Author: Carl Boettiger [aut, cre, cph]
     (<https://orcid.org/0000-0002-1642-628X>)
 Maintainer: Carl Boettiger <cboettig@gmail.com>
 Repository: CRAN
-Date/Publication: 2019-03-06 16:42:53 UTC
+Date/Publication: 2019-10-11 05:30:02 UTC
