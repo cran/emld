@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <meta name="author" content="Carl Boettiger" />
 
-<meta name="date" content="2019-10-11" />
+<meta name="date" content="2020-02-04" />
 
 <title>emld Tutorial</title>
 
@@ -118,9 +117,6 @@ padding-right: 2em;
 font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 font-size: 14px;
 line-height: 1.35;
-}
-#header {
-text-align: center;
 }
 #TOC {
 clear: both;
@@ -289,7 +285,8 @@ code > span.st { color: #d14; }
 code > span.co { color: #888888; font-style: italic; } 
 code > span.ot { color: #007020; } 
 code > span.al { color: #ff0000; font-weight: bold; } 
-code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
 </style>
 
 
@@ -304,7 +301,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 <h1 class="title toc-ignore">emld Tutorial</h1>
 <h4 class="author">Carl Boettiger</h4>
-<h4 class="date">2019-10-11</h4>
+<h4 class="date">2020-02-04</h4>
 
 
 
@@ -324,7 +321,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 </div>
 <div id="motivation" class="section level2">
 <h2>Motivation</h2>
-<p>In contrast to the existing <a href="https://ropensci.github.io/EML">EML package</a>, this package aims to a very light-weight implementation that seeks to provide both an intuitive data format and make maximum use of existing technology to work with that format. In particular, this package emphasizes tools for working with linked data through the JSON-LD format. This package is not meant to replace <code>EML</code>, as it does not support the more complex operations found in that package. Rather, it provides a minimalist but powerful way of working with EML documents that can be used by itself or as a backend for those complex operations. The next release of the EML R package will use <code>emld</code> under the hood.</p>
+<p>In contrast to the existing <a href="https://docs.ropensci.org/EML">EML package</a>, this package aims to a very light-weight implementation that seeks to provide both an intuitive data format and make maximum use of existing technology to work with that format. In particular, this package emphasizes tools for working with linked data through the JSON-LD format. This package is not meant to replace <code>EML</code>, as it does not support the more complex operations found in that package. Rather, it provides a minimalist but powerful way of working with EML documents that can be used by itself or as a backend for those complex operations. The next release of the EML R package will use <code>emld</code> under the hood.</p>
 <p>Note that the JSON-LD format is considerably less rigid than the EML schema. This means that there are many valid, semantically equivalent representations on the JSON-LD side that must all map into the same or nearly the same XML format. At the extreme end, the JSON-LD format can be serialized into RDF, where everything is flat set of triples (e.g. essentially a tabular representation), which we can query directly with semantic tools like SPARQL, and also automatically coerce back into the rigid nesting and ordering structure required by EML. This ability to “flatten” EML files can be particularly convenient for applications consuming and parsing large numbers of EML files. This package may also make it easier for other developers to build on the EML, since the S3/list and JSON formats used here have proven more appealing to many R developers than S4 and XML serializations.</p>
 <p>JSON-LD also makes it easier to extend EML with other existing semantic vocabularies. The standard JSON-LD operations (e.g. framing, compaction) make it easy for developers to specify desired data structures, filter unnecessary terms and provide defaults for needed ones, or even define custom property names, rather than working with the often cumbersome prefixes or URIs of linked data.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(emld)</a>

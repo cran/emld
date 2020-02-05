@@ -1,24 +1,24 @@
-## ----setup, include = FALSE----------------------------------------------
+## ----setup, include = FALSE---------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 
-## ----gh-installation, eval = FALSE---------------------------------------
+## ----gh-installation, eval = FALSE--------------------------------------------
 #  # install.packages("devtools")
 #  devtools::install_github("cboettig/emld")
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 library(emld)
 library(jsonlite)
 library(magrittr)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 f <- system.file("extdata/example.xml", package="emld")
 eml <- as_emld(f)
 eml$dataset$title
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 
 me <- list(individualName = list(givenName = "Carl", surName = "Boettiger"))
 
@@ -34,7 +34,7 @@ ex.xml <- tempfile("ex", fileext = ".xml") # use your preferred file path
 as_xml(eml, ex.xml)
 testthat::expect_true(eml_validate(ex.xml) )
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 library(jqr)
 hf205 <- system.file("extdata/hf205.xml", package="emld")
 
@@ -45,10 +45,10 @@ as_emld(hf205) %>%
          southLat: .southBoundingCoordinate }') %>%
   fromJSON()
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 library(rdflib)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 f <- system.file("extdata/hf205.xml", package="emld")
 hf205.json <- tempfile("hf205", fileext = ".json") # Use your preferred filepath
 

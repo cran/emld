@@ -26,12 +26,19 @@ XML-schema valid EML.
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://docs.ropensci.org/emld}
   \item \url{https://github.com/ropensci/emld}
   \item Report bugs at \url{https://github.com/ropensci/emld/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Carl Boettiger \email{cboettig@gmail.com} (http://orcid.org/0000-0002-1642-628X) [copyright holder]
+\strong{Maintainer}: Carl Boettiger \email{cboettig@gmail.com} (\href{https://orcid.org/0000-0002-1642-628X}{ORCID}) [copyright holder]
+
+Authors:
+\itemize{
+  \item Matthew B. Jones \email{jones@nceas.ucsb.edu} (\href{https://orcid.org/0000-0003-0077-4738}{ORCID}) [copyright holder]
+  \item Bryce Mecum \email{mecum@nceas.ucsb.edu} (\href{https://orcid.org/0000-0002-0381-3766}{ORCID}) [copyright holder]
+}
 
 }
