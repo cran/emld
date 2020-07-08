@@ -1,6 +1,6 @@
 Package: emld
 Title: Ecological Metadata as Linked Data
-Version: 0.4.0
+Version: 0.5.0
 Authors@R: c(
                 person("Carl", "Boettiger", 
                   email = "cboettig@gmail.com", 
@@ -41,11 +41,11 @@ Imports: xml2, jsonlite, jsonld, methods, yaml
 VignetteBuilder: knitr
 Language: en-US
 NeedsCompilation: no
-Packaged: 2020-02-04 21:11:41 UTC; cboettig
+Packaged: 2020-07-08 18:30:50 UTC; cboettig
 Author: Carl Boettiger [aut, cre, cph]
     (<https://orcid.org/0000-0002-1642-628X>),
   Matthew B. Jones [aut, cph] (<https://orcid.org/0000-0003-0077-4738>),
   Bryce Mecum [aut, cph] (<https://orcid.org/0000-0002-0381-3766>)
 Maintainer: Carl Boettiger <cboettig@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-02-05 13:10:23 UTC
+Date/Publication: 2020-07-08 22:40:06 UTC
