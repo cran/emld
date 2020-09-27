@@ -1,12 +1,13 @@
 ## ----setup, include = FALSE---------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  eval = (require("jqr") && require("rdflib"))
 )
 
 ## ----gh-installation, eval = FALSE--------------------------------------------
 #  # install.packages("devtools")
-#  devtools::install_github("cboettig/emld")
+#  devtools::install_github("ropensci/emld")
 
 ## -----------------------------------------------------------------------------
 library(emld)
@@ -35,7 +36,9 @@ as_xml(eml, ex.xml)
 testthat::expect_true(eml_validate(ex.xml) )
 
 ## -----------------------------------------------------------------------------
-library(jqr)
+
+if(require(jqr) && require(magrittr)){
+  
 hf205 <- system.file("extdata/hf205.xml", package="emld")
 
 as_emld(hf205) %>% 
@@ -45,10 +48,11 @@ as_emld(hf205) %>%
          southLat: .southBoundingCoordinate }') %>%
   fromJSON()
 
-## -----------------------------------------------------------------------------
-library(rdflib)
+}
 
 ## -----------------------------------------------------------------------------
+if(require(rdflib) && require(magrittr)){
+  
 f <- system.file("extdata/hf205.xml", package="emld")
 hf205.json <- tempfile("hf205", fileext = ".json") # Use your preferred filepath
 
@@ -77,4 +81,6 @@ sparql <- paste0(prefix, '
 rdf <- rdf_parse(hf205.json, "jsonld")
 df <- rdf_query(rdf, sparql)
 df
+
+}
 
